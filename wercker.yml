@@ -14,7 +14,7 @@ build:
         #       version: 2.2.0
 
         # A step that executes `bundle install` command
-        - bundle-install --full-index
+        - bundle-install full-index
 
         # A step that prepares the database.yml using the database in services
         # - rails-database-yml
