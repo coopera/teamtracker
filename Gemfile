@@ -19,6 +19,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :development do
   gem 'spring'
   gem 'dotenv'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 gem 'pry-rails'
