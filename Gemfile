@@ -29,6 +29,10 @@ gem 'spring',        group: :development
 
 gem 'pry-rails'
 
+gem 'bourbon'
+
+gem 'neat'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
 end
@@ -43,4 +47,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
