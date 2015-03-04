@@ -17,3 +17,5 @@
 
 #Ignore database.yml (for obvious reasons)
 config/database.yml
+
+node_modules
