@@ -9,9 +9,9 @@ default: &default
 
 development:
   <<: *default
-  database: starspremium_development
+  database: teamtracker_development
 
 test:
   <<: *default
-  database: starspremium_test
+  database: teamtracker_test
   min_messages: WARNING
