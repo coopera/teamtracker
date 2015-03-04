@@ -37,4 +37,6 @@ gem 'neat'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
+  gem 'rails-assets-karma'
+  gem 'rails-assets-karma-jasmine'
 end
