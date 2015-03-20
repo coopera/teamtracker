@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'bundler', '>= 1.7.0'
 
 gem 'rails', '4.1.0'
-gem 'pg'
+gem 'mongoid', "~> 4.0.0"
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -27,6 +27,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'mongoid-rspec', '~> 1.10.0'
 end
 
 gem 'pry-rails'
