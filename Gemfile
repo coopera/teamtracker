@@ -27,7 +27,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
-  gem 'mongoid-rspec', '~> 1.10.0'
+  gem 'mongoid-rspec', '~> 2.1.0'
 end
 
 gem 'pry-rails'
