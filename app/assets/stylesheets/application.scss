@@ -17,4 +17,8 @@ section {
   action { @include span-columns(5); }
   timestamp { @include span-columns(3); }
   action-icon { @include span-columns(2); }
+
+  slack-action{@include span-columns(4);}
+  slack-avatar{@include span-columns(1);}
+
 }
