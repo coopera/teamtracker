@@ -5,3 +5,16 @@ html.turbolinks-progress-bar::before {
   background-color: red !important;
   height: 5px !important;
 }
+
+section {
+  @include outer-container;
+  @include span-columns(6);
+  @include shift(3);
+  activity-card{
+    @include outer-container;
+  }
+  avatar { @include span-columns(2); }
+  action { @include span-columns(5); }
+  timestamp { @include span-columns(3); }
+  action-icon { @include span-columns(2); }
+}
