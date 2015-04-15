@@ -36,6 +36,10 @@ gem 'bourbon'
 
 gem 'neat'
 
+# heroku
+gem 'pg'
+gem 'rails_12factor'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
 end
