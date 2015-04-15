@@ -28,6 +28,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'mongoid-rspec', '~> 2.1.0'
+  gem 'dotenv-rails'
 end
 
 gem 'pry-rails'
@@ -39,6 +40,8 @@ gem 'neat'
 # heroku
 gem 'pg'
 gem 'rails_12factor'
+
+gem 'octokit'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
