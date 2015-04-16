@@ -5,6 +5,11 @@ class LoginController < ApplicationController
     if session[:user]
       redirect_to root_path
     else
+      if Rails.env.development?
+        session[:user] = { "access_token" => ENV['GH_TT_DEV_TOKEN'] }
+        return redirect_to root_path
+      end
+
       redirect_to "https://github.com/login/oauth/authorize?" + 
         "client_id=#{ENV['GH_CLIENT_ID']}" +
         "&scope=admin:org_hook"

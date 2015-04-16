@@ -1,1 +1,24 @@
-<%= @organizations.inspect %>
+<h1>TeamTracker - Choose your Organization Styleguide</h1>
+
+<section>
+
+  <h2>Selecione a organização que deseja rastrear</h2>
+
+  <% @organizations.each do |org| %>
+    <org-card>
+      <bigavatar>
+        <%= image_tag org.avatar_url, width: 96, height: 96 %>
+      </bigavatar>
+      <description>
+        <h2><%= link_to org.login, "http://github.com/" + org.login %></h2>
+        <p>
+          <%= org.description.presence || "<i>Nenhuma descrição</i>".html_safe %>
+        </p>
+        <%= link_to "Rastrear", listeners_github_create_path(organization: org.login) %> 
+      </description>
+    </org-card>
+
+    <hr>
+  <% end %>
+
+</section>
