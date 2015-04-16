@@ -1,4 +1,6 @@
 class Listeners::GithubController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: [:webhook]
+
   def new
     client = Octokit::Client.new(access_token: session[:user]["access_token"])
     @organizations = client.organizations
@@ -12,5 +14,7 @@ class Listeners::GithubController < ApplicationController
   end
 
   def webhook
+    GithubNotification.create(event: request.headers['X-Github-Event'], payload: params)
+    render text:'{}', status: :ok
   end
 end

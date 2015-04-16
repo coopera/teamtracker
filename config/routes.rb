@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :listeners do
-  get 'github/webhook'
+  post 'github/webhook'
   end
 
   get 'login/new'
