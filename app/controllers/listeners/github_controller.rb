@@ -11,6 +11,7 @@ class Listeners::GithubController < ApplicationController
     client.create_org_hook(params[:organization],
       { url: 'https://teamtracker2.herokuapp.com/listeners/github/webhook', content_type: 'json'},
       { events: ['*'], active: true })
+    redirect_to root_path
   end
 
   def webhook

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :listeners do
     post 'github/webhook'
-    get 'github/create'
+    post 'github/create'
     get 'github/new'
   end
 
