@@ -42,6 +42,8 @@ gem 'rails_12factor'
 
 gem 'octokit'
 
+gem 'slack-rtmapi', git: 'https://github.com/mackwic/slack-rtmapi.git'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
 end
