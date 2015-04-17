@@ -18,7 +18,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
   gem 'spring'
-  gem 'dotenv'
   gem 'guard'
   gem 'guard-rspec', require: false
 end
