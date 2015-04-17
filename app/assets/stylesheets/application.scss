@@ -14,7 +14,11 @@ section {
     @include outer-container;
   }
   avatar { @include span-columns(2); }
+  bigavatar { @include span-columns(3); }
+
   action { @include span-columns(5); }
+  description { @include span-columns(9); }
+  
   timestamp { @include span-columns(3); }
   action-icon { @include span-columns(2); }
 
