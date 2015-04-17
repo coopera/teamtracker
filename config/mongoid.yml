@@ -1,8 +1,7 @@
 production:
     sessions:
         default:
-            uri: mongodb://teamtracker:coopera@ds061611.mongolab.com:61611/teamtracker
-
+            uri: ENV['MONGO_URL']
 development:
   # Configure available database sessions. (required)
   sessions:
