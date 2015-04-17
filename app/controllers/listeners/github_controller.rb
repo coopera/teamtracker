@@ -15,7 +15,7 @@ class Listeners::GithubController < ApplicationController
   end
 
   def webhook
-    GithubNotification.create(event: request.headers['X-Github-Event'], payload: params)
+    GithubNotification.create(event: request.headers['X-Github-Event'], payload: params, timestamp: DateTime.now)
     render text:'{}', status: :ok
   end
 end
