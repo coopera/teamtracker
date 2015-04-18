@@ -239,7 +239,6 @@ DEPENDENCIES
   bourbon
   bundler (>= 1.7.0)
   coffee-rails (~> 4.0.0)
-  dotenv
   dotenv-rails
   factory_girl_rails
   foreman
