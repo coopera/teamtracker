@@ -1,5 +1,3 @@
-require 'net/http'
-
 class LoginController < ApplicationController
   def new
     if session[:user]

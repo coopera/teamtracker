@@ -1,0 +1,2 @@
+module Listeners::SlackHelper
+end

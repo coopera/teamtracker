@@ -3,5 +3,5 @@ class GithubNotification
 
   field :event, type: String
   field :payload, type: Hash
-  field :issued_at, type: DateTime
+  field :timestamp, type: DateTime
 end

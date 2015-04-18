@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.1'
+
 gem 'bundler', '>= 1.7.0'
 
 gem 'rails', '4.1.0'
@@ -41,6 +43,8 @@ gem 'pg'
 gem 'rails_12factor'
 
 gem 'octokit'
+
+gem 'slack-rtmapi', git: 'https://github.com/mackwic/slack-rtmapi.git'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
