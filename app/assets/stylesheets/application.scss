@@ -10,23 +10,35 @@ section {
   @include outer-container;
   @include span-columns(6);
   @include shift(3);
+
   activity-card{
     @include outer-container;
+    @include span-columns(12);
+    border: 1px solid #dddddd;
+    background: white;
+    margin-bottom: 32px;
+    border-radius: 5px;
+    padding: 16px;
+    h3{
+      margin-top: 0
+    }
   }
-  avatar { @include span-columns(2); }
-  bigavatar { @include span-columns(3); }
 
-  action { @include span-columns(5); }
+  bigavatar { @include span-columns(3); }
   description { @include span-columns(9); }
 
-  timestamp { @include span-columns(3); }
-  action-icon { @include span-columns(2); }
+  avatar { @include span-columns(2); }
+  action { @include span-columns(7); }
+  action-icon { @include span-columns(3); }
 
-  slack-action{@include span-columns(4);}
-  slack-avatar{@include span-columns(1);}
+  timestamp{color: #979797}
+
+  slack-action{@include span-columns(5);}
+  slack-avatar{@include span-columns(2);}
 
 }
 
 body{
   font-family: 'Lato', sans-serif; font-weight: 300;
+  background: #fefefe;
 }
