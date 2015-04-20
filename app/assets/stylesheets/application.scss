@@ -10,19 +10,42 @@ section {
   @include outer-container;
   @include span-columns(6);
   @include shift(3);
+
+  card-group{
+    @include span-columns(12);
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    border-bottom: none;
+  }
+
   activity-card{
     @include outer-container;
+    @include span-columns(12);
+    padding: 32px;
+    background: white;
+    // margin-bottom: 32px;
+    border-bottom: 1px solid #dddddd;
+    h3{
+      margin-top: 0
+    }
   }
-  avatar { @include span-columns(2); }
+
   bigavatar { @include span-columns(3); }
-
-  action { @include span-columns(5); }
   description { @include span-columns(9); }
-  
-  timestamp { @include span-columns(3); }
-  action-icon { @include span-columns(2); }
 
-  slack-action{@include span-columns(4);}
-  slack-avatar{@include span-columns(1);}
+  avatar { @include span-columns(2); }
+  action { @include span-columns(7); }
+  action-icon { @include span-columns(3); }
 
+  timestamp{color: #979797}
+
+  slack-action{@include span-columns(5);}
+  slack-avatar{@include span-columns(2);}
+
+}
+
+body{
+  font-family: 'Lato', sans-serif; font-weight: 300;
+  background: #fefefe;
+  color: #6e6e6e;
 }
