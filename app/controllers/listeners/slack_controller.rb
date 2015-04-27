@@ -4,7 +4,7 @@ class Listeners::SlackController < ApplicationController
   end
 
   def create
-    create_team_info(params[:slack][:token]) if TeamInfo.first.nil?
+    create_team_info(params[:slack][:token]) #if TeamInfo.first.nil?
     
     t = Thread.new do
       url = SlackRTM.get_url(token: params[:slack][:token])
@@ -21,7 +21,7 @@ class Listeners::SlackController < ApplicationController
           user_id: data['user'],
           timestamp: DateTime.strptime(data['ts'], '%s')
         }
-        
+
         SlackNotification.create(data)
       end
 
@@ -43,13 +43,39 @@ private
     request = Net::HTTP::Get.new(uri.request_uri)
     http.use_ssl = true
 
-    members = JSON.parse(http.request(request).body)['members']
+    members_json = JSON.parse(http.request(request).body)['members']
 
-    result = {}
-    members.each do |member|
-      result[member['id']] = member['name'] unless member['is_bot'] || member['deleted']
+    members = {}
+    members_json.each do |member|
+      members[member['id']] = member['name']
     end
 
-    TeamInfo.create(slack_id_to_member_name: result)
+    ###
+    uri = URI.parse("https://slack.com/api/channels.list?token=#{token}&pretty=1")
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Get.new(uri.request_uri)
+    http.use_ssl = true
+
+    channels_json = JSON.parse(http.request(request).body)['channels']
+
+    channels = {}
+    channels_json.each do |channel|
+      channels[channel['id']] = channel['name']
+    end
+
+    ###
+    uri = URI.parse("https://slack.com/api/groups.list?token=#{token}&pretty=1")
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Get.new(uri.request_uri)
+    http.use_ssl = true
+
+    groups_json = JSON.parse(http.request(request).body)['groups']
+
+    groups_json.each do |group|
+      channels[group['id']] = group['name']
+    end
+
+    TeamInfo.destroy_all
+    TeamInfo.create(slack_id_to_member_name: members, channel_id_to_name: channels)
   end
 end
