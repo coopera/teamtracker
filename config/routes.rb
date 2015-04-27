@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'feed', to: 'feed#index'
+  get 'slack', to: 'feed#slack'
 
   namespace :listeners do
     get 'slack/new'
