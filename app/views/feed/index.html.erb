@@ -1,10 +1,12 @@
 <% @feed_data.each do |feed| %>
-  Event: <%= feed.try(:event) || "" %><br>
-  Payload: <%= feed.try(:payload) || "" %><br>
-  User: <%= @team_info.slack_id_to_member_name[feed.try(:user_id) || ""] || feed.try(:user_id) %><br>
-  Text: <%= feed.try(:text) || "" %><br>
-  Channel: <%= @team_info.channel_id_to_name[feed.try(:channel_id) || ""] || feed.try(:channel_id) %><br>
-  <hr>
+  <% if @team_info.channel_id_to_name[feed.try(:channel_id) || ""] != "veteranos2013" %>
+    Event: <%= feed.try(:event) || "" %><br>
+    Payload: <%= feed.try(:payload) || "" %><br>
+    User: <%= @team_info.slack_id_to_member_name[feed.try(:user_id) || ""] || feed.try(:user_id) %><br>
+    Text: <%= feed.try(:text) || "" %><br>
+    Channel: <%= @team_info.channel_id_to_name[feed.try(:channel_id) || ""] || feed.try(:channel_id) %><br>
+    <hr>
+  <% end %>
 <% end %>
 
 <%= @team_info.inspect %>
