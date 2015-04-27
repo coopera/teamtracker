@@ -1,1 +1,9 @@
-<%= @feed_data.inspect %>
+<% @feed_data.each do |feed| %>
+  Event: <%= feed.try(:event) || "" %><br>
+  Payload: <%= feed.try(:payload) || "" %><br>
+  User: <%= @team_info.slack_id_to_member_name[feed.try(:user_id) || ""] || feed.try(:user_id) %><br>
+  Text: <%= feed.try(:text) || "" %><br>
+  <hr>
+<% end %>
+
+<%= @team_info.inspect %>
