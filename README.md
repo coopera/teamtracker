@@ -15,3 +15,6 @@ This app listen for events in Github and Slack, so your development server shoul
 2. To save this token in a environment variable called GH_TT_DEV_TOKEN. You can use your .env. If so **DON'T COMMIT THIS FILE TO THE VCS** as it's a open source project, and people may steal your token and do bad things to your github account.
 
 The magic happens at https://github.com/coopera/teamtracker/blob/master/app/controllers/login_controller.rb#L8-L11.
+
+##Slack
+To make a slack integration, go to `/listeners/slack/new` and put your api token. To know [how to get the token](https://api.slack.com/web) click on the link
