@@ -18,3 +18,7 @@ The magic happens at https://github.com/coopera/teamtracker/blob/master/app/cont
 
 ##Slack
 To make a slack integration, go to `/listeners/slack/new` and put your api token. To know [how to get the token](https://api.slack.com/web) click on the link
+
+
+##Github
+On development environment you might want to use our own token (hot to get it is explained above), you must go to `/login/new` _*before*_ going to `/listeners/github/new` because the access token will be set on the login controller, doing that you can go and make your integration with your github group. 
