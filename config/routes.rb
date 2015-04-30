@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   namespace :listeners do
     get 'slack/new'
     post 'slack/create'
-  end
-
-  namespace :listeners do
+    
     post 'github/webhook'
     post 'github/create'
     get 'github/new'
