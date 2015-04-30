@@ -1,5 +1,8 @@
 <section>
   <card-group>
-    <%= render partial: 'card', collection: feeds, as: :feed %>
+    <% feeds.each do |feed| %>
+      <%= render 'gh_card', feed: feed if feed.is_a?(GithubNotification) %>
+      <%= render 'slack_card', feed: feed if feed.is_a?(SlackNotification) %>
+    <% end %>
   </card-group>
 </section>
