@@ -1,0 +1,60 @@
+<html>
+<head>
+  <link rel="stylesheet" href="github-markdown.css">
+  <style>
+      .markdown-body {
+          min-width: 200px;
+          max-width: 790px;
+          margin: 0 auto;
+          padding: 30px;
+      }
+  </style>
+</head>
+<body>
+<article class="markdown-body">
+
+<h1>All channels</h1>
+
+<h3>Users:</h3>
+
+<ul>
+  <% general.each do |user, data| %>
+    <li>
+      <%= user %>
+      <ul>
+        <% data.each do |k, v| %>
+          <li><%= k.capitalize %> => <%= v %> </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<% result.each do |channel, data| %>
+  <h1><%= channel %></h1>
+
+  <h3>Users</h3>
+
+  <ul>
+    <% data.each do |n, value| %>
+      <li>
+        <%= n %>
+
+        <ul>
+          <% value.each do |k, v| %>
+            <li><%= k.capitalize %> => <%= v %> </li>
+          <% end %>
+        </ul>
+
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<p>Raw data as json</p>
+<pre><%= result.to_json %><pre>
+
+</article>
+</body>
+</html>
