@@ -1,2 +1,0 @@
-services.factory('ExampleService', function() {
-});
