@@ -1,5 +1,8 @@
 Team Tracker
 ==============
+[![wercker status](https://app.wercker.com/status/32e748676ee90dc85397f3df20788c4e/m "wercker status")](https://app.wercker.com/project/bykey/32e748676ee90dc85397f3df20788c4e)
+
+[![Code Climate](https://codeclimate.com/github/coopera/teamtracker/badges/gpa.svg)](https://codeclimate.com/github/coopera/teamtracker)
 
 #Starting the server
 ```shell
