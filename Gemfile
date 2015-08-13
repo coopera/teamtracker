@@ -34,8 +34,8 @@ end
 
 gem 'pry-rails'
 
+gem 'bower-rails', '~> 0.10.0'
 gem 'bourbon'
-
 gem 'neat'
 
 # heroku
