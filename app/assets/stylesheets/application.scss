@@ -1,4 +1,7 @@
+@import "normalize.css/normalize";
+@import "variables";
 @import "bourbon";
 @import "neat";
 
-@import "variables";
+@import "base/*";
+@import "components/*"
