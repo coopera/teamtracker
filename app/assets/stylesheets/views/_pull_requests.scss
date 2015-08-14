@@ -1,0 +1,23 @@
+.pull-requests {
+  @include outer-container();
+  max-width: 760px;
+  padding: 0 1em;
+}
+
+.pull-request {
+  @include row();
+  margin-bottom: 2em;
+}
+
+.pull-request__author {
+  @include span-columns(2);
+
+  .avatar {
+    float: right;
+  }
+}
+
+.pull-request__card {
+  @extend %card;
+  @include span-columns(10);
+}

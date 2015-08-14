@@ -6,7 +6,7 @@ class GithubNotification
   field :timestamp, type: DateTime
 
   def self.pull_requests
-    self.where(event: "pull_request")
+    self.where(event: "pull_request").map { |e| e[:payload][:pull_request] }
   end
 
 end

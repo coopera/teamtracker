@@ -1,6 +1,7 @@
+@import "neat-helpers";
 // Neat
-$max-width: em(970) !default;
-
+$max-width: 970px !default;
+$tablet: new-breakpoint(min-width 481px);
 
 // Colors Palette
 $c-pure-white   : #fff;
