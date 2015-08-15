@@ -27,5 +27,6 @@ module Teamtracker
     # config.i18n.default_locale = :de
     
     config.autoload_paths += %W(#{config.root}/app/stubs/**/*)
+    config.autoload_paths += %W(#{config.root}/app/factories/**/*)
   end
 end
