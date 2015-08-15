@@ -1,13 +1,13 @@
 <section class="pull-requests">
   <h1>Latest pull requests</h1>
-  <% @pull_requests[0..20].each do |pr| %>
+  <% @pull_requests.each do |pull_request| %>
     <div class="pull-request">
       <div class="pull-request__author">
-        <%= image_tag pr[:user][:avatar_url], class: "avatar" %>
+        <%= image_tag pull_request.author.avatar_url, class: 'avatar' %>
       </div>
       <div class="pull-request__card">
         <div class="pull-request__info">
-          <strong><%= pr[:user][:login] %></strong> made some actions in <strong><%= pr[:head][:repo][:full_name]%></strong>.
+          <%= pull_request.title %>
         </div>
       </div>
     </div>
