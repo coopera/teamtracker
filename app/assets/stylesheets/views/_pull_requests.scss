@@ -11,6 +11,16 @@
 
 .pull-request__author {
   @include span-columns(2);
+  position: relative;
+
+  &::before {
+    border-bottom: 5px solid $c-pure-white;
+    content: "";
+    position: absolute;
+    right: -17px;
+    top: 30px;
+    width: 20px;
+  }
 
   .avatar {
     float: right;
