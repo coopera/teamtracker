@@ -6,9 +6,10 @@ class UserStubFactory
   def self.fabric(n)
     users = Array.new
     n.times do
-      users << UserStub.new(username: "John Doe")
-      # result = JSON.load(open('https://randomuser.me/api/').read)["results"][0]["user"]
-      # users << UserStub.new(username: result["username"], avatar_url: result["picture"]["thumbnail"])
+      require 'open-uri'
+      require 'json'
+      user = JSON.load(open('https://randomuser.me/api/')).first.last.first["user"]
+      users << UserStub.new(username: user['username'], url: "#", avatar_url: user['picture']['thumbnail'])
     end
     users
   end

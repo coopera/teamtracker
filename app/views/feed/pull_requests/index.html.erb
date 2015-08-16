@@ -3,11 +3,25 @@
   <% @pull_requests.each do |pull_request| %>
     <div class="pull-request">
       <div class="pull-request__author">
-        <%= image_tag pull_request.author.avatar_url, class: 'avatar' %>
+        <% if pull_request.author.avatar_url %>
+          <%= image_tag pull_request.author.avatar_url, class: 'avatar' %>
+        <% else %>
+          <%= image_tag "http://api.adorable.io/avatars/#{rand(1..3000)}", class: 'avatar' %>
+        <% end %>
       </div>
       <div class="pull-request__card">
         <div class="pull-request__info">
-          <%= pull_request.title %>
+          <%= link_to pull_request.author.url do %>
+            <%= pull_request.author.username %>
+          <% end %>
+          <%= pull_request.action %>
+          <%= link_to pull_request.url do %>
+            <%= pull_request.title %>
+          <% end %>
+          in
+          <%= link_to pull_request.repo_url do %>
+            <%= pull_request.repo %>
+          <% end %>
         </div>
       </div>
     </div>
