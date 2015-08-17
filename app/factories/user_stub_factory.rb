@@ -9,7 +9,8 @@ class UserStubFactory
       require 'open-uri'
       require 'json'
       user = JSON.load(open('https://randomuser.me/api/')).first.last.first["user"]
-      users << UserStub.new(username: user['username'], url: "#", avatar_url: user['picture']['thumbnail'])
+      user_stub = UserStub.new(username: user['username'], url: "#", avatar_url: user['picture']['thumbnail'])
+      users << UserPresenter.new(user_stub)
     end
     users
   end
