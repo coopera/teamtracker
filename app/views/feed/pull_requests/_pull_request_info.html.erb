@@ -1,0 +1,17 @@
+<div class="pull-request__info">
+  <span class="octicon octicon-git-pull-request"></span>
+  <%= link_to pull_request.author.url do %>
+    <%= pull_request.author.username %>
+  <% end %>
+  <%= pull_request.action %>
+  <%= link_to pull_request.url do %>
+    <%= pull_request.title %>
+  <% end %>
+  in
+  <%= link_to pull_request.repo_url do %>
+    <%= pull_request.repo %>
+  <% end %>
+  <div class="pull-request__date">
+    Posted <%= time_ago_in_words(pull_request.time) %> ago
+  </div>
+</div>

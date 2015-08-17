@@ -6,47 +6,15 @@
         <%= pull_request.author.avatar %>
       </div>
       <div class="pull-request__card">
-        <div class="pull-request__info">
-          <span class="octicon octicon-git-pull-request"></span>
-          <%= link_to pull_request.author.url do %>
-            <%= pull_request.author.username %>
+        <%= render partial: "pull_request_info", locals: {pull_request: pull_request} %>
+        <% @pull_requests[i+1..-1].each do |next_pull_request| %>
+          <% if next_pull_request.author == pull_request.author %>
+            <% @pull_requests.delete(next_pull_request) %>
+            <%= render partial: "pull_request_info", locals: {pull_request: next_pull_request} %>
+          <% else %>
+            <% break %>
           <% end %>
-          <%= pull_request.action %>
-          <%= link_to pull_request.url do %>
-            <%= pull_request.title %>
-          <% end %>
-          in
-          <%= link_to pull_request.repo_url do %>
-            <%= pull_request.repo %>
-          <% end %>
-          <div class="pull-request__date">
-            Posted <%= time_ago_in_words(pull_request.time) %> ago
-          </div>
-        </div>
-          <% @pull_requests[i+1..-1].each do |next_pull_request| %>
-            <% if next_pull_request.author == pull_request.author %>
-              <% @pull_requests.delete(next_pull_request) %>
-              <div class="pull-request__info">
-                <span class="octicon octicon-git-pull-request"></span>
-                <%= link_to next_pull_request.author.url do %>
-                  <%= next_pull_request.author.username %>
-                <% end %>
-                <%= next_pull_request.action %>
-                <%= link_to next_pull_request.url do %>
-                  <%= next_pull_request.title %>
-                <% end %>
-                in
-                <%= link_to next_pull_request.repo_url do %>
-                  <%= next_pull_request.repo %>
-                <% end %>
-                <div class="pull-request__date">
-                  Posted <%= time_ago_in_words(next_pull_request.time) %> ago
-                </div>
-              </div>
-            <% else %>
-              <% break %>
-            <% end %>
-          <% end %>
+        <% end %>
       </div>
     </div>
   <% end %>
