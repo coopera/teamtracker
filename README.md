@@ -4,6 +4,15 @@ Team Tracker
 
 [![Code Climate](https://codeclimate.com/github/coopera/teamtracker/badges/gpa.svg)](https://codeclimate.com/github/coopera/teamtracker)
 
+#Installing Dependencies
+
+```shell
+# Install ruby dependencies...
+$ bundle install
+# Install front-end dependencies...
+$ rake bower:install
+```
+
 #Starting the server
 ```shell
 bundle exec foreman start
