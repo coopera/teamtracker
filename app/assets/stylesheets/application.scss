@@ -1,4 +1,10 @@
+@import "octicons/octicons/octicons.css";
+@import "normalize.css/normalize";
+
 @import "bourbon";
+@import "variables";
 @import "neat";
 
-@import "variables";
+@import "base/*";
+@import "components/*";
+@import "views/*";

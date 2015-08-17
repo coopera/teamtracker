@@ -1,0 +1,21 @@
+@import "neat-helpers";
+// Neat
+$max-width: 970px !default;
+$tablet: new-breakpoint(min-width 481px);
+
+// Colors Palette
+$c-pure-white   : #fff;
+$c-blue-pearl   : #eff1f4;
+$c-gray-cloud   : #eaebec;
+$c-nice-pavement: #4c545e;
+$c-active-blood : #f75959;
+$c-nice-pool    : #59aff7;
+
+// Colors Context
+$c-background: $c-gray-cloud;
+$c-font: $c-nice-pavement;
+$c-primary: $c-nice-pool;
+
+// Typography
+$base-font-family: 'Source Sans Pro', sans-serif;
+$base-font-size: em(16);

@@ -1,0 +1,22 @@
+<section class="pull-requests">
+  <h1>Latest pull requests</h1>
+  <% @pull_requests.each_with_index do |pull_request, i| %>
+    <div class="pull-request">
+      <div class="pull-request__author">
+        <%= pull_request.author.avatar %>
+      </div>
+      <div class="pull-request__card">
+        <%= render partial: "pull_request_info", locals: {pull_request: pull_request} %>
+        <%# TODO: REFACTOR THIS INSIDE LOOP %>
+        <% @pull_requests[i+1..-1].each do |next_pull_request| %>
+          <% if next_pull_request.author == pull_request.author %>
+            <% @pull_requests.delete(next_pull_request) %>
+            <%= render partial: "pull_request_info", locals: {pull_request: next_pull_request} %>
+          <% else %>
+            <% break %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</section>

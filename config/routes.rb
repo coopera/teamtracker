@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     get 'github/new'
   end
 
+  namespace :feed do
+    get 'pull_requests', to: 'pull_requests#index'
+  end
+
   get 'login/new'
   get 'login', to: 'login#create'
 

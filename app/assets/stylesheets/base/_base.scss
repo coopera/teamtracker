@@ -1,0 +1,16 @@
+body {
+  background: $c-background;
+  color: $c-font;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: 300;
+}
+
+a {
+  color: $c-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
