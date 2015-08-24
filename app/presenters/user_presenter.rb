@@ -1,14 +1,7 @@
 class UserPresenter < ApplicationPresenter
 
-  attr_accessor :user
-
-  def initialize(user)
-    @user = user
-    super(user)
-  end
-
   def avatar
-    helpers.image_tag(user.avatar_url, class: 'avatar') unless user.avatar_url.empty?
+    helpers.image_tag(model.avatar_url, class: 'avatar') unless (model.avatar_url.empty? || model.avatar_url.nil?)
   end
 
 end
