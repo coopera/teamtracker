@@ -1,14 +1,7 @@
 class PullRequestPresenter < ApplicationPresenter
 
-  attr_accessor :pull_request
-
-  def initialize(pull_request)
-    @pull_request = pull_request
-    super(pull_request)
-  end
-
   def info
-    %(<a href="#{self.author.url}">#{self.author.username}</a> #{self.action} <a href="#{self.url}">#{self.title}</a> in <a href="#{self.repo_url}">#{self.repo}</a>).html_safe
+    %(<a href="#{model.author.url}">#{model.author.username}</a> #{model.action} <a href="#{model.url}">#{model.title}</a> in <a href="#{model.repo_url}">#{model.repo}</a>).html_safe
   end
 
 end
