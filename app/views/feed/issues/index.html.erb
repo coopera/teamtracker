@@ -1,0 +1,22 @@
+<section class="feed">
+  <h1>Latest issues</h1>
+  <% @issues.each_with_index do |issue, i| %>
+    <div class="feed-item">
+      <div class="feed-item__user">
+        <%= issue.author.avatar %>
+      </div>
+      <div class="feed-item__card">
+        <%= render partial: "issue_info", locals: {issue: issue} %>
+        <%# TODO: REFACTOR THIS INSIDE LOOP %>
+        <% @issues[i+1..-1].each do |next_issue| %>
+          <% if next_issue.author == issue.author %>
+            <% @issues.delete(next_issue) %>
+            <%= render partial: "issue_info", locals: {issue: next_issue} %>
+          <% else %>
+            <% break %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</section>
