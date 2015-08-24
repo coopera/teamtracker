@@ -1,6 +1,6 @@
 class PullRequestStubFactory
 
-  def self.fabric(n, users)
+  def self.produce(n, users)
     pull_requests = Array.new
     actions = [:opened, :commented, :closed]
     n.times do

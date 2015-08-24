@@ -3,7 +3,7 @@ require 'json'
 
 class UserStubFactory
 
-  def self.fabric(n)
+  def self.produce(n)
     users = Array.new
     n.times do
       user = JSON.load(open('https://randomuser.me/api/')).first.last.first["user"]

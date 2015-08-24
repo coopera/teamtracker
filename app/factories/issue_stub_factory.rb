@@ -1,6 +1,6 @@
 class IssueStubFactory
 
-  def self.fabric(n, users)
+  def self.produce(n, users)
     issues = Array.new
     actions = [:opened, :commented, :closed]
     n.times do
