@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :feed do
     get 'pull_requests', to: 'pull_requests#index'
+    get 'issues', to: 'issues#index'
   end
 
   get 'login/new'
