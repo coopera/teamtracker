@@ -35,6 +35,10 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+gem 'less-rails-semantic_ui'
+gem 'therubyracer'
+gem 'autoprefixer-rails'
+
 gem 'pry-rails'
 
 gem 'bower-rails', '~> 0.10.0'
