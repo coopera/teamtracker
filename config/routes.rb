@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'feed', to: 'feed#index'
 
+  get '/auth/:provider/callback' => 'sessions#create'
+
   namespace :listeners do
     get 'slack/new'
     post 'slack/create'

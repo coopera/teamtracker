@@ -18,6 +18,9 @@ gem 'foreman'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'omniauth'
+gem 'omniauth-github'
+
 group :development do
   gem 'spring'
   gem 'guard'
