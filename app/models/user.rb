@@ -5,6 +5,9 @@ class User
   field :github_email, type: String
   field :slack_id, type: String
   field :slack_team_id, type: String
+  field :provider, type: String
+  field :uid, type: Integer
+  field :name, type: String 
 
   def self.omniauth(auth)
     create! do |user|
