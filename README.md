@@ -21,11 +21,17 @@ https://github.com/organizations/coopera/settings/applications/238108
 
 And copy the ID and secret of the app and paste them at your .env file.
 
+**DON'T COMMIT THIS FILE TO THE VCS**
+
 For other users, create a new app here:
 
 https://github.com/settings/applications/new
 
 And do the same mentioned above.
+
+Remember:
+
+**DON'T COMMIT THE .ENV FILE TO THE VCS**
 
 #Starting the server
 ```shell
