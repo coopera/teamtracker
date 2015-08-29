@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'feed', to: 'feed#index'
 
   get '/auth/:provider/callback' => 'sessions#create'
+  get 'logout', to: 'sessions#destroy', as: :logout
 
   namespace :listeners do
     get 'slack/new'

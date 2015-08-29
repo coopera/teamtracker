@@ -1,7 +1,7 @@
 <h1>TeamTracker - StyleGuide</h1>
 
 <% if current_user %>
-  <%= current_user.name %>
+  <%= link_to 'logout', logout_path %>
 <% else %>
   <%= link_to 'Login', '/auth/github' %>
 <% end %>
