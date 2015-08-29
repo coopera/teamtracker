@@ -1,6 +1,10 @@
 <h1>TeamTracker - StyleGuide</h1>
 
-<%= link_to 'Login', '/auth/github' %>
+<% if current_user %>
+  <%= current_user.name %>
+<% else %>
+  <%= link_to 'Login', '/auth/github' %>
+<% end %>
 
 <section>
   <h2>GitHub</h2>

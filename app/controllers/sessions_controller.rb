@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
     User.omniauth(request.env['omniauth.auth']).tap do |user|
-      session[:user_id] = user.id
+      session[:user_id] = user.id.to_param
     end
     redirect_to root_url
   end
