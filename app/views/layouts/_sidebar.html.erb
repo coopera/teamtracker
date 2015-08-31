@@ -1,4 +1,4 @@
-<div class="ui left vertical visible sidebar divided items">
+<div class="ui vertical inverted sidebar menu left uncover visible">
     <div class="item">
       <span class="header">
         <h3>Team Tracker</h3>
@@ -6,10 +6,9 @@
     </div>
     <% if current_user %>
       <div class="item">
-        <div class="ui avatar image">
+        <div class="ui avatar left floated image">
           <%= image_tag current_user.avatar %>
         </div>
-        <div class="middle aligned content">
           <%= current_user.name %>
           <div class="meta">
             <%= link_to logout_path do %>
@@ -17,7 +16,6 @@
               Sign out
             <% end %>
           </div>
-        </div>
       </div>
     <% else %>
       <%= link_to '/auth/github', class: 'item' do %>

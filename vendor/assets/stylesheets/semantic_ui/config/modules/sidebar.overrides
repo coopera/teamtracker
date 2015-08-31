@@ -3,43 +3,26 @@
 *******************************/
 
 .ui.sidebar {
-  padding-top: 1em;
-  color: #fff;
-  background-color: #1b1c1d;
 
-  a {
-    color: rgba(255, 255, 255, 0.5)
-  }
+  .ui.avatar.image {
+    width: 2.5em;
+    height: 2.5em;
 
-  a:hover {
-    color: #fff;
+    img {
+      width: 2.5em;
+      height: 2.5em;
+    }
   }
 
   .meta {
-    color: .75em;
+    font-size: .8em;
+    margin-top: .5rem;
+
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        color: #fff;
+      }
+    }
   }
-
-  .ui.avatar.image {
-    width: 3em;
-    height: 3em;
-  }
-
-}
-
-.ui.divided.items > .item {
-  padding: 1em !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
-}
-
-.ui.items > .item .meta {
-  font-size: .8em;
-}
-
-.ui.items > .item .meta > a:not(.ui) {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.ui.items > .item .meta > a:not(.ui):hover {
-  color: #fff;
 }
