@@ -13,6 +13,8 @@ $ bundle install
 $ rake bower:install
 ```
 
+Reminder: you should've rails, bower and mondogb installed in your machine.
+
 #Setting environment variables
 
 If you are a coopera member, go to this url:
@@ -34,8 +36,16 @@ Remember:
 **DON'T COMMIT THE .ENV FILE TO THE VCS**
 
 #Starting the server
+
+Run a mongodb server:
+
 ```shell
-bundle exec foreman start
+$ mongod
+```
+And the app server:
+
+```shell
+$ bundle exec foreman start
 ```
 
 #Contributing
