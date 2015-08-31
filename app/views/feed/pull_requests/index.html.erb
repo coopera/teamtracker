@@ -1,22 +1,46 @@
-<section class="pull-requests">
-  <h1>Latest pull requests</h1>
-  <% @pull_requests.each_with_index do |pull_request, i| %>
-    <div class="pull-request">
-      <div class="pull-request__author">
-        <%= pull_request.author.avatar %>
+
+<div class="ui grid">
+  <div class="three wide column">
+    <div class="ui fluid secondary vertical pointing menu">
+      <div class="item">
+        <span class="header">GitHub</span>
+        <a class="item">
+          Pull Requests
+        </a>
+        <a class="item">
+          Issues
+        </a>
       </div>
-      <div class="pull-request__card">
-        <%= render partial: "pull_request_info", locals: {pull_request: pull_request} %>
-        <%# TODO: REFACTOR THIS INSIDE LOOP %>
-        <% @pull_requests[i+1..-1].each do |next_pull_request| %>
-          <% if next_pull_request.author == pull_request.author %>
-            <% @pull_requests.delete(next_pull_request) %>
-            <%= render partial: "pull_request_info", locals: {pull_request: next_pull_request} %>
-          <% else %>
-            <% break %>
-          <% end %>
-        <% end %>
+      <div class="item">
+        <span class="header">Slack</span>
+        <a class="item">
+          Mentions
+        </a>
       </div>
     </div>
-  <% end %>
-</section>
+  </div>
+  <div class="ten wide column">
+    <div class="ui statistics">
+      <div class="statistic">
+        <span class="value"><%= @pull_requests.count %></span>
+        <span class="label">Pull Requests</span>
+      </div>
+      <div class="statistic">
+        <span class="value">6</span>
+        <span class="label">Developers</span>
+      </div>
+    </div>
+    <div class="ui feed">
+      <% @pull_requests.each_with_index do |pull_request, i| %>
+        <div class="event">
+          <div class="label">
+            <%= pull_request.author.avatar %>
+          </div>
+          <div class="content">
+            <%= render partial: "pull_request_info", locals: {pull_request: pull_request} %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

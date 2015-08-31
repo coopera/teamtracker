@@ -1,7 +1,6 @@
-<div class="pull-request__info">
-  <span class="octicon octicon-git-pull-request"></span>
-    <%= pull_request.info %>
-  <div class="pull-request__date">
+<div class="summary">
+  <%= pull_request.info %>
+  <div class="date">
     Posted <%= time_ago_in_words(pull_request.time) %> ago
   </div>
 </div>
