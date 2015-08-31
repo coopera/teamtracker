@@ -10,7 +10,12 @@
 </head>
 <body>
 
-  <%= yield %>
+  <%= render "layouts/sidebar" %>
+  <div class="pusher">
+    <div class="ui fluid container">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>
