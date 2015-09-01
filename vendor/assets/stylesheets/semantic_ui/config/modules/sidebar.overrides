@@ -1,0 +1,28 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.sidebar {
+
+  .ui.avatar.image {
+    width: 2.5em;
+    height: 2.5em;
+
+    img {
+      width: 2.5em;
+      height: 2.5em;
+    }
+  }
+
+  .meta {
+    font-size: .8em;
+    margin-top: .5rem;
+
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

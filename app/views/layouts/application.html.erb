@@ -10,7 +10,13 @@
 </head>
 <body>
 
-  <%= yield %>
+  <%= render "layouts/sidebar" %>
+  <%= render "layouts/submenu" %>
+  <div class="tt-pusher">
+    <div class="ui container">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>

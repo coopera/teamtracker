@@ -1,10 +1,10 @@
-@import "octicons/octicons/octicons.css";
-@import "normalize.css/normalize";
+@import "vendors";
 
-@import "bourbon";
-@import "variables";
-@import "neat";
+.ui.grid {
+  margin: 0;
+  max-width: 100%;
+}
 
-@import "base/*";
-@import "components/*";
-@import "views/*";
+.tt-pusher {
+  padding-left: 470px;
+}
