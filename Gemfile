@@ -52,3 +52,5 @@ gem 'rails_12factor'
 gem 'octokit'
 
 gem 'slack-rtmapi', git: 'https://github.com/mackwic/slack-rtmapi.git'
+
+gem 'handlebars_assets'
