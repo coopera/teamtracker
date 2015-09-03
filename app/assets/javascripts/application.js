@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require vendors
+//= require app/app
 
 Turbolinks.enableProgressBar();
