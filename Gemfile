@@ -21,6 +21,23 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'omniauth'
 gem 'omniauth-github'
 
+# markdown renderer
+gem 'redcarpet'
+
+#syntax highlighting
+gem 'coderay'
+
+# gem 'acts-as-taggable-on'
+
+#nested forms
+gem "cocoon"
+
+#search
+gem 'ransack'
+
+#ace text editor
+gem 'ace-rails-ap'
+
 group :development do
   gem 'spring'
   gem 'guard'
@@ -28,11 +45,12 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers'
   gem 'mongoid-rspec', '~> 2.1.0'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers'
   gem 'dotenv-rails'
+  # gem 'database_cleaner'
 end
 
 gem 'less-rails-semantic_ui'
@@ -46,7 +64,10 @@ gem 'bourbon'
 gem 'neat'
 
 # heroku
-gem 'pg'
+group :production do
+  gem 'pg'
+end
+
 gem 'rails_12factor'
 
 gem 'octokit'

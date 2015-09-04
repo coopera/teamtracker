@@ -8,6 +8,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    ace-rails-ap (4.0.0)
     actionmailer (4.1.0)
       actionpack (= 4.1.0)
       actionview (= 4.1.0)
@@ -45,6 +46,7 @@ GEM
     bower-rails (0.10.0)
     bson (3.2.1)
     builder (3.2.2)
+    cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -162,6 +164,8 @@ GEM
     optionable (0.2.0)
     origin (2.1.1)
     pg (0.18.2)
+    polyamorous (1.2.0)
+      activerecord (>= 3.0)
     polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -194,10 +198,17 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.15.0)
     rake (10.4.2)
+    ransack (1.7.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.2)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rdoc (4.2.0)
+    redcarpet (3.3.2)
     ref (2.0.0)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
@@ -274,10 +285,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ace-rails-ap
   autoprefixer-rails
   bourbon
   bower-rails (~> 0.10.0)
   bundler (>= 1.7.0)
+  cocoon
+  coderay
   coffee-rails (~> 4.0.0)
   dotenv-rails
   factory_girl_rails
@@ -297,6 +311,8 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.0)
   rails_12factor
+  ransack
+  redcarpet
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
