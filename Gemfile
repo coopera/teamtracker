@@ -50,7 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers'
   gem 'dotenv-rails'
-  # gem 'database_cleaner'
+  gem 'database_cleaner'
 end
 
 gem 'less-rails-semantic_ui'

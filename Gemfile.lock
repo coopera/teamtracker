@@ -57,6 +57,7 @@ GEM
     coffee-script-source (1.9.1.1)
     commonjs (0.2.7)
     connection_pool (2.2.0)
+    database_cleaner (1.4.1)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
@@ -293,6 +294,7 @@ DEPENDENCIES
   cocoon
   coderay
   coffee-rails (~> 4.0.0)
+  database_cleaner
   dotenv-rails
   factory_girl_rails
   foreman
