@@ -2,8 +2,12 @@ class DocsController < ApplicationController
   before_action :set_doc, only: [:show, :edit, :update, :destroy]
 
   def index
-    @q = Doc.ransack(params[:q])
-    @docs = @q.result(distinct: true)
+
+    # @q = Doc.ransack(params[:q])
+    # @docs = @q.result(distinct: true)
+
+    selector = RansackMongo::Query.parse(params[:q])
+    @docs = Doc.where(selector)
 
     # if params[:tag]
     #   @docs = @docs.tagged_with(ActsAsTaggableOn::Tag.find(params[:tag]))

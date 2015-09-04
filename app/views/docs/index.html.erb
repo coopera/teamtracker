@@ -4,11 +4,11 @@
   <%= t('doc index title') %>
 </h1>
 
-<%= render "utils/menu"%>
+ <!-- render "utils/menu" -->
 <br>
 <br>
 
-<%= render "doc_search_form" %>
+<!-- render doc search here-->
 
 <% unless @docs.empty? %>
   <%= render @docs %>
@@ -20,4 +20,4 @@
   <%= @docs.count %> document(s) match the current search.
 </p>
 
-<%= render "shared/tag_list" %>
+<!-- render shared/tag_list -->
