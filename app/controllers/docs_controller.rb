@@ -3,10 +3,6 @@ class DocsController < ApplicationController
 
   def index
 
-    # @q = Doc.ransack(params[:q])
-    # @docs = @q.result(distinct: true)
-
-    # selector = RansackMongo::Query.parse(params[:q])
     @q = Doc.search(params[:q])
     @docs = @q.result
 
