@@ -27,14 +27,14 @@ gem 'redcarpet'
 #syntax highlighting
 gem 'coderay'
 
-# gem 'acts-as-taggable-on'
+#tags
+gem 'mongoid_taggable'
 
 #nested forms
 gem "cocoon"
 
 #search
 gem 'ransack'
-# gem 'ransack_mongo'
 
 #ace text editor
 gem 'ace-rails-ap'

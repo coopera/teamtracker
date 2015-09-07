@@ -1,6 +1,7 @@
 class Doc
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Taggable
 
   field :title, type: String
   field :description, type: String
@@ -15,6 +16,9 @@ class Doc
 
   validates :title, length: { minimum: 5 }
 
+  def tag_list
+    tags.split(",")
+  end
   # acts_as_ordered_taggable
   # I need to find a mongo solution
 end

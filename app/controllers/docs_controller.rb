@@ -2,13 +2,12 @@ class DocsController < ApplicationController
   before_action :set_doc, only: [:show, :edit, :update, :destroy]
 
   def index
-
     @q = Doc.search(params[:q])
     @docs = @q.result
 
-    # if params[:tag]
-    #   @docs = @docs.tagged_with(ActsAsTaggableOn::Tag.find(params[:tag]))
-    # end
+    if params[:tag]
+      @docs = @docs.tagged_with(params[:tag])
+    end
     #
     # @tags = ActsAsTaggableOn::Tag.all
   end
@@ -70,6 +69,6 @@ class DocsController < ApplicationController
     end
 
     def doc_params
-      params[:doc].permit(:title, :description, :implementation, :tag_list, related_links_attributes: [:id, :link, :title, :_destroy])
+      params[:doc].permit(:title, :description, :implementation, :tags, related_links_attributes: [:id, :link, :title, :_destroy])
     end
 end

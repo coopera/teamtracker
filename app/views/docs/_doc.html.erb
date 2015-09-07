@@ -6,12 +6,13 @@
   <%= doc.description%>
 </p>
 
- <!-- doc.tags.each do |t|
-  = link_to docs_path(tag: t.id) do
+
+<% doc.tag_list.each do |t| %>
+  <%= link_to docs_path(tag: t) do %>
     <div class="small-tag">
-      = t
+      <%= t %>
     </div>
-  end
- end -->
+  <% end %>
+<% end %>
 
 <hr>

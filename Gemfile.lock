@@ -131,6 +131,9 @@ GEM
       mongoid (~> 4.0.0)
       rake
       rspec (~> 3.1)
+    mongoid_taggable (1.1.1)
+      mongoid (>= 3)
+      rake
     moped (2.0.6)
       bson (~> 3.0)
       connection_pool (~> 2.0)
@@ -305,6 +308,7 @@ DEPENDENCIES
   less-rails-semantic_ui
   mongoid (~> 4.0.0)
   mongoid-rspec (~> 2.1.0)
+  mongoid_taggable
   neat
   octokit
   omniauth

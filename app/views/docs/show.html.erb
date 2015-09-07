@@ -29,7 +29,13 @@
 
 <strong>Tags</strong>
 <p>
-  <!-- = @doc.tag_list  -->
+  <% @doc.tag_list.each do |t| %>
+   <%= link_to docs_path(tag: t) do %>
+     <div class="small-tag">
+       <%= t %>
+     </div>
+   <% end %>
+  <% end %>
 </p>
 
 <hr>
