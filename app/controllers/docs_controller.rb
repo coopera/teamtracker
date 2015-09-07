@@ -6,8 +6,9 @@ class DocsController < ApplicationController
     # @q = Doc.ransack(params[:q])
     # @docs = @q.result(distinct: true)
 
-    selector = RansackMongo::Query.parse(params[:q])
-    @docs = Doc.where(selector)
+    # selector = RansackMongo::Query.parse(params[:q])
+    @q = Doc.search(params[:q])
+    @docs = @q.result
 
     # if params[:tag]
     #   @docs = @docs.tagged_with(ActsAsTaggableOn::Tag.find(params[:tag]))

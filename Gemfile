@@ -33,8 +33,8 @@ gem 'coderay'
 gem "cocoon"
 
 #search
-# gem 'ransack'
-gem 'ransack_mongo'
+gem 'ransack'
+# gem 'ransack_mongo'
 
 #ace text editor
 gem 'ace-rails-ap'
