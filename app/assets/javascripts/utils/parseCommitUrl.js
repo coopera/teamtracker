@@ -1,12 +1,12 @@
 parseCommitUrl = function(url){
   var changes = JSON.parse(httpGet(getCommitApiUrl(url)))["files"];
 
-  var changed_files = "";
+  var changedFiles = "";
 
   for (var i = 0; i < changes.length; i++) {
-    changed_files += formatCommitText(changes[i]);
+    changedFiles += formatCommitText(changes[i]);
   }
-  return changed_files;
+  return changedFiles;
 }
 
 getRelevantLines = function(patch){
