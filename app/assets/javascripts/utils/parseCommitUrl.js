@@ -2,8 +2,9 @@ parseCommitUrl = function(url){
   var changes = JSON.parse(httpGet(getCommitApiUrl(url)))["files"];
 
   var changedFiles = "";
+  var changesLength = changes.length;
 
-  for (var i = 0; i < changes.length; i++) {
+  for (var i = 0; i < changesLength; i++) {
     changedFiles += formatCommitText(changes[i]);
   }
   return changedFiles;
