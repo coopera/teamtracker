@@ -32,7 +32,7 @@ RSpec.describe DocsController, type: :controller do
 
   describe "GET #show" do
     it "assigns the requested doc as @doc" do
-      doc = Doc.create! valid_attributes
+      doc = Doc.create valid_attributes
       get :show, {:id => doc.to_param}, valid_session
       expect(assigns(:doc)).to eq(doc)
     end
@@ -47,7 +47,7 @@ RSpec.describe DocsController, type: :controller do
 
   describe "GET #edit" do
     it "assigns the requested doc as @doc" do
-      doc = Doc.create! valid_attributes
+      doc = Doc.create valid_attributes
       get :edit, {:id => doc.to_param}, valid_session
       expect(assigns(:doc)).to eq(doc)
     end
@@ -95,20 +95,20 @@ RSpec.describe DocsController, type: :controller do
       }
 
       it "updates the requested doc" do
-        doc = Doc.create! valid_attributes
+        doc = Doc.create valid_attributes
         put :update, {:id => doc.to_param, :doc => new_attributes}, valid_session
         doc.reload
         expect(doc.title).to eq("Test Test")
       end
 
       it "assigns the requested doc as @doc" do
-        doc = Doc.create! valid_attributes
+        doc = Doc.create valid_attributes
         put :update, {:id => doc.to_param, :doc => valid_attributes}, valid_session
         expect(assigns(:doc)).to eq(doc)
       end
 
       it "redirects to the doc" do
-        doc = Doc.create! valid_attributes
+        doc = Doc.create valid_attributes
         put :update, {:id => doc.to_param, :doc => valid_attributes}, valid_session
         expect(response).to redirect_to(doc)
       end
@@ -116,13 +116,13 @@ RSpec.describe DocsController, type: :controller do
 
     context "with invalid params" do
       it "assigns the doc as @doc" do
-        doc = Doc.create! valid_attributes
+        doc = Doc.create valid_attributes
         put :update, {:id => doc.to_param, :doc => invalid_attributes}, valid_session
         expect(assigns(:doc)).to eq(doc)
       end
 
       it "re-renders the 'edit' template" do
-        doc = Doc.create! valid_attributes
+        doc = Doc.create valid_attributes
         put :update, {:id => doc.to_param, :doc => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
@@ -131,14 +131,14 @@ RSpec.describe DocsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested doc" do
-      doc = Doc.create! valid_attributes
+      doc = Doc.create valid_attributes
       expect {
         delete :destroy, {:id => doc.to_param}, valid_session
       }.to change(Doc, :count).by(-1)
     end
 
     it "redirects to the docs list" do
-      doc = Doc.create! valid_attributes
+      doc = Doc.create valid_attributes
       delete :destroy, {:id => doc.to_param}, valid_session
       expect(response).to redirect_to(docs_url)
     end
