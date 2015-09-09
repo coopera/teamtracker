@@ -34,10 +34,13 @@ function initPage() {
 
           var text;
 
-          if (pastedLink.search("commit/") != -1) {
+          var isAcommit = pastedLink.search("commit/") != -1;
+          var isApull = pastedLink.search("/pull/") != -1;
+
+          if (isAcommit) {
             text = parseCommitUrl(pastedLink);
           }
-          else if (pastedLink.search("/pull/") != -1){
+          else if (isApull){
             text = parsePullUrl(pastedLink);
           }
           else {
