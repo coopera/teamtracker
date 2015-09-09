@@ -24,7 +24,7 @@ RSpec.describe DocsController, type: :controller do
 
   describe "GET #index" do
     it "assigns all docs as @docs" do
-      doc = Doc.create! valid_attributes
+      doc = Doc.create valid_attributes
       get :index, {}, valid_session
       expect(assigns(:docs)).to match_array([doc])
     end
