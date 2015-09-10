@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<%= render "utils/menu"%>
+
+<h1> <%= @doc.title %> </h1>
+<div class="faded">
+  <%= t('created at') + " " + l(@doc.created_at, format: :short) %>
+  ,
+  <%= t('updated at') + " " + l(@doc.updated_at, format: :short) %>
+</div>
+<p>
+  <%= @doc.description %>
+</p>
+
+<hr>
+
+<p>
+  <%= markdown @doc.implementation %>
+</p>
+
+<strong>Useful Links</strong>
+<p>
+  <% @doc.related_links.each do |link| %>
+    <li>
+      <%= link.title %>
+      <%= link.link %>
+    </li>
+  <% end %>
+</p>
+
+<strong>Tags</strong>
+<p>
+  <% @doc.tag_list.each do |t| %>
+   <%= link_to docs_path(tag: t) do %>
+     <div class="small-tag">
+       <%= t %>
+     </div>
+   <% end %>
+  <% end %>
+</p>
+
+<hr>
+
+<%= link_to t('edit doc'), edit_doc_path(@doc) %>

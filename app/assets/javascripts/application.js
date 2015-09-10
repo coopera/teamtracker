@@ -12,7 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery
+//= require jquery_ujs
+//= require cocoon
 //= require turbolinks
+//= require ace-rails-ap
+//= require ace/theme-github
+//= require_tree .
 //= require vendors
 
 Turbolinks.enableProgressBar();
