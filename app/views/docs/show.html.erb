@@ -12,6 +12,8 @@
   <%= @doc.description %>
 </p>
 
+author: <%= @doc.user.name if @doc.user %>
+
 <hr>
 
 <p>

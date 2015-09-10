@@ -25,6 +25,8 @@ class DocsController < ApplicationController
   def create
     @doc = Doc.new(doc_params)
 
+    @doc.user = current_user if current_user
+
     respond_to do |format|
       if @doc.save
         respond_with_success(format, t('doc_created_success'))
@@ -69,6 +71,6 @@ class DocsController < ApplicationController
     end
 
     def doc_params
-      params[:doc].permit(:title, :description, :implementation, :tags, related_links_attributes: [:id, :link, :title, :_destroy])
+      params[:doc].permit(:title, :description, :implementation, :tags, :user_id, related_links_attributes: [:id, :link, :title, :_destroy])
     end
 end
