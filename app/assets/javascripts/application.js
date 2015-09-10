@@ -22,3 +22,7 @@
 //= require vendors
 
 Turbolinks.enableProgressBar();
+
+$(document).on('ready page:load', function () {
+  loadEditor();
+});
