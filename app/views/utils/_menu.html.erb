@@ -2,7 +2,9 @@
 <%= link_to t('all docs'), docs_path %>
 &nbsp;
 &nbsp;
-<%= link_to t('your docs'), docs_path(author: current_user.id) %>
-&nbsp;
-&nbsp;
+<% if current_user %>
+  <%= link_to t('your docs'), docs_path(author: current_user.id) %>
+  &nbsp;
+  &nbsp;
+<% end %>
 <%= link_to t('new doc'), new_doc_path %>
