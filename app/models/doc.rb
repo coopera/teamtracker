@@ -19,4 +19,8 @@ class Doc
   def tag_list
     tags.split(",")
   end
+
+  scope :from_author, ->(id){
+    where(:user_id => id)
+  }
 end

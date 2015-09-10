@@ -5,6 +5,10 @@ class DocsController < ApplicationController
     @q = Doc.search(params[:q])
     @docs = @q.result
 
+    if params[:author]
+      @docs = @docs.from_author(params[:author])
+    end
+
     if params[:tag]
       @docs = @docs.tagged_with(params[:tag])
     end
