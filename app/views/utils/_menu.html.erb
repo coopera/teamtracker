@@ -3,7 +3,7 @@
 &nbsp;
 &nbsp;
 <% if current_user %>
-  <%= link_to t('your docs'), docs_path(author: current_user.id) %>
+  <%= link_to t('your docs'), docs_path(author: current_user) %>
   &nbsp;
   &nbsp;
 <% end %>
