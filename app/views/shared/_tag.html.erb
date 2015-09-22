@@ -1,5 +1,5 @@
-<%= link_to docs_path(tag: tag.id) do %>
+<%= link_to docs_path(tag: tag[0]) do %>
   <div class="small-tag">
-      <%= tag.name %> | <%= tag.taggings_count %>
+      <%= tag[0] %> | <%= tag[1].to_i %>
   </div>
 <% end %>
