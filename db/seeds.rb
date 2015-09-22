@@ -7,19 +7,23 @@ User.create(name: "Kent Fowler",
 Doc.create(title: "How to export a page in pdf",
            description: "This tutorial will teach you how to [...]",
            implementation: lorem,
-           user_id: User.first.id);
+           user_id: User.first.id,
+           tags: "ruby, rails, pdf, export, wicked_pdf")
 
 Doc.create(title: "How to use devise to send password recovery emails",
            description: "This tutorial will teach you how to [...]",
            implementation: lorem,
-           user_id: User.first.id);
+           user_id: User.first.id,
+           tags: "ruby, rails, devise, authentication, email, password")
 
 Doc.create(title: "How to test models with rspec",
            description: "This tutorial will teach you how to [...]",
            implementation: lorem,
-           user_id: User.first.id);
+           user_id: User.first.id,
+           tags: "ruby, rails, rspec, test, model")
 
 Doc.create(title: "How to use translations in rails",
-           description: "This tutorial will teach you how to [...]",
-           implementation: lorem,
-           user_id: User.first.id);
+          description: "This tutorial will teach you how to [...]",
+          implementation: lorem,
+          user_id: User.first.id,
+          tags: "ruby, translation, locale")
