@@ -12,8 +12,8 @@ class DocsController < ApplicationController
     if params[:tag]
       @docs = @docs.tagged_with(params[:tag])
     end
-    #
-    # @tags = ActsAsTaggableOn::Tag.all
+
+    @tags = @docs.tags_with_weight
   end
 
   def show

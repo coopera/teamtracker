@@ -16,6 +16,8 @@ class Doc
 
   validates :title, length: { minimum: 5 }
 
+  before_save :downcase_tags
+
   def tag_list
     tags.split(",")
   end
@@ -23,4 +25,9 @@ class Doc
   scope :from_author, ->(id){
     where(:user_id => id)
   }
+
+  def downcase_tags
+    self.tags_array = self.tags_array.map(&:downcase)
+  end
+  
 end

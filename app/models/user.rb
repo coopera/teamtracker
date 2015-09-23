@@ -10,6 +10,8 @@ class User
   field :name, type: String
   field :email, type: String
   field :avatar, type: String
+  field :token, type: String
+  field :nickname, type: String
 
   def self.omniauth(auth)
     create! do |user|
@@ -18,6 +20,8 @@ class User
       user.email = auth['info']['email']
       user.avatar = auth['info']['image']
       user.name = auth['info']['name'] || "" if auth['info']
+      user.token = auth['credentials']['token']
+      user.nickname = auth['info']['nickname']
     end
   end
 end
