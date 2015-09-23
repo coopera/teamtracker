@@ -15,7 +15,6 @@ class User
 
   def self.omniauth(auth)
     create! do |user|
-      # raise Exception.new auth
       user.provider = auth['provider']
       user.uid = auth['uid']
       user.email = auth['info']['email']
