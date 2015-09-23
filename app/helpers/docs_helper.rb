@@ -21,4 +21,8 @@ module DocsHelper
     @markdown_to_html = Redcarpet::Markdown.new(@coderayified, options)
     @markdown_to_html.render(text).html_safe
   end
+
+  def pretty_tag(tag)
+    tag[0] + " | " + tag[1].to_i.to_s
+  end
 end
