@@ -20,6 +20,7 @@
 //= require ace/theme-github
 //= require_tree .
 //= require vendors
+//= require app/app
 
 Turbolinks.enableProgressBar();
 

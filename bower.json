@@ -9,7 +9,10 @@
     "dependencies": {
       "normalize.css": "latest",
       "octicons": "*",
-      "semantic-ui": "2.0.8"
+      "semantic-ui": "2.0.8",
+      "underscore": "1.8.3",
+      "backbone": "1.2.2",
+      "handlebars": "4.0.0"
     }
   }
 }
